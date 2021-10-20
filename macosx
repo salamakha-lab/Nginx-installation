@@ -41,3 +41,17 @@ $ [sudo] make install
 Add the nginx binary to $PATH:
 
 export PATH="/usr/local/nginx/sbin:$PATH"
+
+Run nginx
+
+$ sudo nginx
+
+this will start nginx on port 80. Open your web browser and go to http://localhost:80
+
+If this works, run
+
+sudo nginx -s stop
+
+Set up nginx.conf at
+
+/usr/local/etc/nginx/nginx.conf
