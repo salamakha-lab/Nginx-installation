@@ -1,0 +1,43 @@
+Installation on Macosx
+
+1. Download Nginx
+
+$ cd /usr/local/src
+$ curl -OL http://nginx.org/download/nginx-1.21.3.tar.gz
+$ tar -xvzf nginx-1.12.2.tar.gz && rm nginx-1.21.3.tar.gz
+
+2. Download the PCRE library
+
+The PCRE library distribution (version 8.45) needs to be downloaded from the PCRE site and extracted. The rest is done by nginx’s ./configure and make. PCRE is required for the http_rewrite_module, and also for regular expressions support in the location directive.
+
+$ curl -OL https://ftp.pcre.org/pub/pcre/pcre-8.45.tar.gz
+$ tar xvzf pcre-8.45.tar.gz && rm pcre-8.45.tar.gz
+
+3. Configure Nginx
+
+See the full list of ./configure options: http://nginx.org/en/docs/configure.html.
+
+$ cd nginx-1.21.3/
+Compile nginx without SSL support
+
+$ ./configure --with-pcre=../pcre-8.45/ 
+with SSL support
+
+Download OpenSSL sources and extract:
+
+$ curl -OL https://www.openssl.org/source/openssl-1.1.1.tar.gz
+$ tar xvzf openssl-1.1.1.tar.gz && rm openssl-1.1.1.tar.gz 
+
+Compile Nginx:
+
+$ cd ../nginx-1.21.3/
+$ ./configure --with-pcre=../pcre-8.45/ --with-http_ssl_module --with-openssl=/usr/local/src/openssl-1.1.1
+
+4. Install Nginx
+
+$ [sudo] make 
+$ [sudo] make install
+
+Add the nginx binary to $PATH:
+
+export PATH="/usr/local/nginx/sbin:$PATH"
