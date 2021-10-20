@@ -4,7 +4,7 @@ Installation on Macosx
 
 $ cd /usr/local/src
 $ curl -OL http://nginx.org/download/nginx-1.21.3.tar.gz
-$ tar -xvzf nginx-1.12.2.tar.gz && rm nginx-1.21.3.tar.gz
+$ tar -xvzf nginx-1.21.3.tar.gz 
 
 2. Download the PCRE library
 
