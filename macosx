@@ -46,7 +46,7 @@ Run nginx
 
 $ sudo nginx
 
-this will start nginx on port 80. Open your web browser and go to http://localhost:80
+this will start nginx on port 80. Open your web browser and go to http://localhost
 
 If this works, run
 
